@@ -28,7 +28,7 @@ void ofApp::setup(){
     dir.listDir();
     dir.sort();
     
-
+    
     for (int i = 0; i<dir.size(); i++){
         paths.push_back(dir.getPath(i));
     }
@@ -62,7 +62,6 @@ void ofApp::update(){
         ofxOscMessage receivedMessage;
         receiver.getNextMessage(receivedMessage);
         string addr = receivedMessage.getAddress();
-        ofLog()<< addr<<endl;
         
         if (addr.compare("/haiku/hexagram") == 0){ //if the OSC address corresponds to /haiku/hexagram
             int state = receivedMessage.getArgAsInt(0);
@@ -70,8 +69,9 @@ void ofApp::update(){
             ofLog()<<"videoID: "<<videoId<<endl;
         }
         
-        if (addr.compare("/hexagram/state") == 0){ //if the OSC address corresponds to /hexagram/state
+        else if (addr.compare("/hexagram/state") == 0){ //if the OSC address corresponds to /hexagram/state
             int state = receivedMessage.getArgAsInt(0);
+            ofLog()<< addr<<": "<<state<<endl;
             switch (state){
                 case 0:
                     //haiku.setPaused(true);
@@ -84,7 +84,7 @@ void ofApp::update(){
                 case 2:{
 		    string videoPath = ofToDataPath(paths[videoId],true);
                     ofLog()<<videoPath<<endl;
-                    haiku.loadAsync(videoPath);
+                    haiku.load(videoPath);
                     haiku.setLoopState(OF_LOOP_NONE);
                     haiku.play();
                     break;
@@ -92,8 +92,9 @@ void ofApp::update(){
             }
         }
     }
-    
-    if (haiku.isPlaying() && haiku.getCurrentFrame() == 196) haiku.setPaused(true);
+    int cF = haiku.getCurrentFrame();
+    ofLog()<<"current frame: "<<cF<<endl;
+    if (haiku.isPlaying() && cF == 140 ) haiku.setPaused(true);
     if (!haiku.getIsMovieDone()) haiku.update();
 }
 
