@@ -74,7 +74,7 @@ void ofApp::update(){
             ofLog()<< addr<<": "<<state<<endl;
             switch (state){
                 case 0:
-                    haiku.setPaused(true);
+                   // haiku.setPaused(true);
                     break;
                 case 1:
                     haiku.setPaused(false);
