@@ -16,6 +16,7 @@ class ofApp : public ofBaseApp{
     int screenHeight;
     int videoId;
 
+    float lightZ;
     
     ofxXmlSettings settings;
 		
@@ -27,5 +28,18 @@ class ofApp : public ofBaseApp{
     
     vector<string> paths;
     ofVideoPlayer haiku;
+    
+    ofLight pointLight;
+    ofLight pointLight2;
+    ofLight pointLight3;
+    
+    ofMaterial brickMaterial;
+    ofMaterial bgMaterial;
+    
+    ofImage texture1;
+    ofPlanePrimitive bgPlane;
+
+    
+    ofCamera cam;
     
 };
