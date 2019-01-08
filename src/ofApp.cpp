@@ -86,7 +86,7 @@ void ofApp::update(){
                     ofLog()<<videoPath<<endl;
                     haiku.load(videoPath);
                     haiku.setLoopState(OF_LOOP_NONE);
-                    haiku.play();
+                    if (haiku.isLoaded()) haiku.play();
                     break;
                 }
             }
