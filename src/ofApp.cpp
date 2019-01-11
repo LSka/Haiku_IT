@@ -58,11 +58,11 @@ void ofApp::setup(){
     pointLight.setDiffuseColor( ofFloatColor(1, 1, 1) );
     pointLight.setSpecularColor( ofFloatColor(1.f, 1.f, 1.f));
     pointLight.setAttenuation(1.2,.0,0);
-    pointLight.setPosition((ofGetWidth()*.5), ofGetHeight()/3, 300);
+    pointLight.setPosition((ofGetWidth()*.5), ofGetHeight()/3, 500);
     
     pointLight2.setDiffuseColor( ofFloatColor(.95, .95, .65) );
     pointLight2.setSpecularColor( ofFloatColor(1.f, 1.f, 1.f));
-    pointLight2.setPosition(-(ofGetWidth()*.5), ofGetHeight()/3, 300);
+    pointLight2.setPosition(-(ofGetWidth()*.5), ofGetHeight()/3, 500);
     
     pointLight3.setDiffuseColor( ofFloatColor(.95, .95, .65) );
     pointLight3.setSpecularColor( ofFloatColor(1.f, 1.f, 1.f));
@@ -148,9 +148,9 @@ void ofApp::update(){
     
     //move lights
     float time = ofGetElapsedTimef();
-    float pulse1 = (sin(time*0.5)*0.6);
-    float pulse2 = (cos(time*0.4)*0.6);
-    float pulse3 = (sin(time*0.1)*0.3);
+    float pulse1 = (sin(time*0.1)*1.5); //SIN(TIME*SPEED)*INTENSITY
+    float pulse2 = (cos(time*0.15)*1.5);
+    float pulse3 = (sin(time*0.1)*1.5);
     float noise = ofNoise(time*0.3);
     pointLight.setAttenuation(1.8+pulse1,0,0);
     pointLight2.setAttenuation(1.7+pulse2,0,0);
