@@ -143,7 +143,7 @@ void ofApp::update(){
     }
     int cF = haiku.getCurrentFrame();
     //ofLog()<<"current frame: "<<cF<<endl;
-    if (haiku.isPlaying() && cF == 140 ) haiku.setPaused(true);
+    if (haiku.isPlaying() && cF == 211 ) haiku.setPaused(true);
     if (!haiku.getIsMovieDone()) haiku.update();
     
     //move lights
