@@ -1,5 +1,5 @@
 <BACKGROUND>
-	<TEXTURE>paper.jpg</TEXTURE>
+	<TEXTURE>sx.png</TEXTURE>
 </BACKGROUND>
 <VIDEO>
     <PATH>movies/test</PATH>
