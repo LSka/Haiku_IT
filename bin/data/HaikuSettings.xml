@@ -1,5 +1,5 @@
 <BACKGROUND>
-	<TEXTURE>paper.jpg</TEXTURE>
+	<TEXTURE>sx.png</TEXTURE>
 </BACKGROUND>
 <VIDEO>
     <PATH>movies/test</PATH>
@@ -9,7 +9,7 @@
 		<PORT>6000</PORT>
 	</RECEIVER>
 	<SENDER>
-		<HOST>192.168.1.255</HOST>
+		<HOST>192.168.2.255</HOST>
 		<PORT>5000</PORT>
 	</SENDER>
 </OSC>
