@@ -93,6 +93,8 @@ void ofApp::setup(){
     //set the camera position
     cam.setGlobalPosition({ 0,0,cam.getImagePlaneDistance(ofGetCurrentViewport()) });
     cam.rotateDeg(90,0,0,1);
+
+	ofSetColor(255,255,255);
     
     //initialize OSC
     int oscInPort = settings.getValue("OSC:RECEIVER:PORT",6000);
@@ -173,7 +175,6 @@ void ofApp::draw(){
     
     bgMaterial.begin();
     //bgMovie.getTexture().bind();
-    ofSetColor(255,255,255);
     if(haiku.isLoaded()) { //Don't draw if the video isn't ready
         haiku.bind();
         bgPlane.draw();
