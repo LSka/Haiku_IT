@@ -175,9 +175,11 @@ void ofApp::draw(){
     bgMaterial.begin();
     //bgMovie.getTexture().bind();
     ofSetColor(255,255,255);
-    haiku.bind();
-    bgPlane.draw();
-    haiku.unbind();
+    if(haiku.isLoaded()) { //Don't draw if the video isn't ready
+        haiku.bind();
+        bgPlane.draw();
+        haiku.unbind();
+    }
     //bgMovie.getTexture().unbind();
     bgMaterial.end();
     
