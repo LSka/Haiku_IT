@@ -146,6 +146,12 @@ void ofApp::update(){
     //ofLog()<<"current frame: "<<cF<<endl;
     if (haiku.isPlaying() && cF == 211 ) haiku.setPaused(true);
     if (!haiku.getIsMovieDone()) haiku.update();
+    else if(haiku.getIsMovieDone()){
+        ofxOscMessage mess;
+        mess.setAddress("/haiku/done");
+        mess.addTriggerArg();
+        sender.sendMessage(mess);
+    }
     
     //move lights
     float time = ofGetElapsedTimef();
